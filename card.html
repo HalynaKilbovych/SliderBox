@@ -26,7 +26,7 @@
 
     /* Styling for individual boxes */
     .box {
-        width: 300px; /* Fixed width for each box */
+        width: 100%;
         padding: 20px; /* Reduced padding to 10px on all sides */
         box-sizing: border-box;
         font-family: 'Open Sans', sans-serif; /* Set font family to Open Sans */
@@ -135,9 +135,8 @@
        
 </style>
 
-<p>This is an example with a card like the one you have on your page now, 1.25 cards are displayed </p>
-
-    <div class="swiper" id="swipeContainer">
+    <p>This is an example with a card like the one you have on your page now, 1 cards are displayed on phone, 2 on tablet, 3 on desk </p>
+    <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -205,20 +204,16 @@
 
       breakpoints: {
         320: {
-            slidesPerView: 1.25, 
+        slidesPerView: 1, 
         spaceBetween: 20,
         },
-        480: {
-        slidesPerView: 1.4,
-        },
-        520: {
-        slidesPerView: 1.5,
-        },
-        600: {
-        slidesPerView: 1.7,
+        620: {
+        slidesPerView: 2,
+        spaceBetween: 20,
         }, 
-        900: {
+        960: {
         slidesPerView: 3,
+        spaceBetween: 20,
         },
   }
     });
@@ -226,7 +221,3 @@
     
     </script>
     
-
-
-
-
