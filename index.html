@@ -68,7 +68,7 @@
         font-size: 16px; /* Set paragraph font size to 16px */
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 5; 
+        -webkit-line-clamp: 4; 
         -webkit-box-orient: vertical;
         max-width: 100%;
 }
@@ -97,10 +97,8 @@
     }
 
     .swiper {
-
-        height: 350px;
-        background-color: rgb(233, 233, 233);
-        padding: 20px;
+        height: 300px;
+        padding: 0px 20px;
         margin: 0 auto;
     }
     .swiper-slide { 
@@ -134,8 +132,6 @@
 
        
 </style>
-
-<p>This is an example with a card like the one you have on your page now, 1.25 cards are displayed </p>
 
     <div class="swiper" id="swipeContainer">
         <!-- Additional required wrapper -->
@@ -183,7 +179,7 @@
         const swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'horizontal',
-      loop: true,
+      loop: false,
 
       // If we need pagination
       pagination: {
@@ -199,9 +195,11 @@
       // And if we need scrollbar
       scrollbar: {
         el: '.swiper-scrollbar',
-        draggable: true, 
+        draggable: false, 
       },
 
+      touchReleaseOnEdges: true, 
+      threshold: 0, 
 
       breakpoints: {
         320: {
