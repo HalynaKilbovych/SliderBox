@@ -1,229 +1,528 @@
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
->
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<title>Swipeable Boxes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+ 
 <style>
+    #nav-menu-B8HsOAN9N8 {
+    font-weight: normal;
+}
 
-        p,
+p,
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-        margin: 0;
-        }
-        ul {
-        margin: 0;
-        padding-left: 0;
-        }
-
-    /* Styling for individual boxes */
-    .box {
-        width: 300px; /* Fixed width for each box */
-        padding: 20px; /* Reduced padding to 10px on all sides */
-        box-sizing: border-box;
-        font-family: 'Open Sans', sans-serif; /* Set font family to Open Sans */
-        margin-right: 15px; /* Add 15px margin to the right of each box */
-        border-radius: 10px; /* Rounded corners for all corners of each box */
-        line-height: 1.4; /* Set line height to 1.4 */
-        text-align: left; /* Align text to the left */
-        position: relative; /* Relative positioning for image */
-        overflow: hidden;
-
-
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    /* Styling for headlines */
-    .box h2 {
-        font-size: 18px; /* Set headline font size to 18px */
-        font-weight: bold; /* Make headlines bold */
-    }
-
-    /* Styling for name (h4) */
-    .box h4 {
-        font-size: 16px; /* Set name font size to 16px */
-        font-weight: bold; /* Make name bold */
-    }
-
-    /* Styling for additional h2 headings (date) */
-    .box h2.additional {
-        font-size: 16px; /* Set additional heading font size to 16px */
-        font-weight: bold; /* Make additional heading bold */
-        font-family: 'Open Sans', sans-serif; /* Set font family to Open Sans */
-        text-align: right; /* Align additional headings to the right */
-    }
-
-    /* Styling for paragraphs */
-    .testimonial-text {
-        font-size: 16px; /* Set paragraph font size to 16px */
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 4; 
-        -webkit-box-orient: vertical;
-        max-width: 100%;
+    margin: 0;
 }
 
-        
+ul {
+    margin: 0;
+    padding-left: 0;
+}
 
-    /* Styling for individual box backgrounds */
-    .box1, .box2, .box3 {
-        background-color: white; /* White background for all boxes */
+.testimonial {
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin-right: 15px;
+    border-radius: 10px;
+    line-height: 1.4;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.testimonial h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.testimonial h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.testimonial h2.additional {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
+}
+
+.testimonial-text {
+    font-size: 14px;
+    background-color: white;
+}
+
+.testimonial1, .testimonial2, .testimonial3, .testimonial4, .testimonial5. {
+    background-color: white;
+}
+
+.additional-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+.star-image {
+    width: 100px;
+    height: auto;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.testimonial-swiper {
+    height: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.swiper-scrollbar {
+    cursor: pointer;
+}
+
+div.swiper-scrollbar-drag {
+    width: 300px;
+}
+
+@media screen and (max-width: 420px) {
+    .swiper-slide {
+        width: 80%;
     }
 
-    /* Styling for flex container for additional h2 */
-    .additional-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline; /* Align items to the baseline to have the text on the same line */
-        flex-wrap: wrap;
+    .testimonial {
+        width: 100%;
     }
+}
 
-    /* Styling for star image */
-    .star-image {
-        width: 100px; /* Set the width of the star image to 100px */
-        height: auto; /* Maintain aspect ratio */
-        margin-right: 5px; /* Add 10px margin to separate the star image from text */
-        margin-bottom: 5px;
-    }
-
-    .swiper {
-        height: 300px;
-        padding: 0px 20px;
+@media screen and (min-width: 1020px) {
+    .testimonial-swiper {
+        width: 950px;
         margin: 0 auto;
     }
-    .swiper-slide { 
-        width: 300px; 
-        height: 300px;
-    }
-    .swiper-scrollbar { 
-        cursor: pointer;
-        
-    }
 
-    div.swiper-scrollbar-drag { 
+    .swiper-slide {
         width: 300px;
     }
+}
 
-    @media screen and (max-width: 420px){
-            .swiper-slide{ 
-                width: 70%; 
-            }
-            .box { 
-                width: 100%; 
-            }
+.main {
+    position: relative;
+    height: 100%;
+    background: transparent;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+div.swiper-button-next, 
+div.swiper-button-prev {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    top: 45%;
+}
+
+div.swiper-button-next::after {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(26 26 26 / 70%);
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.swiper-button-prev::after {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(26 26 26 / 70%);
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.swiper-pagination {
+    font-size: 14px;
+    font-family: 'Open Sans';
+    position: absolute;
+    bottom: 22%;
+    left: 87%;
+    width: 9%;
+    color: #fff;
+    background-color: rgb(26 26 26 / 70%);
+    border-radius: 20px;
+}
+
+
+.main2 {
+    max-width: 1200px;
+    height: 700px;
+}
+
+.swiper-slide:hover {
+    opacity: 1;
+    transition: 250ms ease-in-out;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1001; 
+}
+
+.modal {
+        display: none;
+        position: relative;
+        z-index: 1002;
+        min-height: 100%;
+        animation: fadeIn 0.5s ease-out; 
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
         }
-
-        @media screen and (min-width: 1020px){
-            .swiper{ 
-                width: 1000px; 
-            }
+        to {
+            opacity: 1;
         }
+    }
 
+.gallery-top--modal { 
+    width: 70%;
+    height: 60%;
+}
 
-       
+body.modal-open {
+    overflow: hidden;
+}
+
 </style>
 
-    <div class="swiper" id="swipeContainer">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="box box1">
-                <h2><img src="https://assets.cdn.filesafe.space/sQ0mUfIjnJlWy5hJUOWy/media/63be5ec8-f762-44d0-a4e0-bf1091fd5e66.png" alt="Star" class="star-image"><br>FIRST CLASS SERVICE</h2>
-                <p class="testimonial-text">"Highly recommend Hardscape to anyone wanting a first class reliable team to do an excellent job." "Highly recommend Hardscape to anyone wanting a first class reliable team to do an excellent job.""Highly recommend Hardscape to anyone wanting a first class reliable team to do an excellent job.""Highly recommend Hardscape to anyone wanting a first class reliable team to do an excellent job."</p>
-                <div class="additional-container">
-                    <h4>{{custom_values.review_name_3}}</h4>
-                    <h2 class="additional">{{custom_values.review_date_3}}</h2>
+<div class="modal" id="modal">
+    <div class="modal-content">
 
+        <div class="swiper gallery-top--modal">
+            <div class="swiper-wrapper">
+               
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg);">
+                </div>
+                
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-2.jpg);">
+                </div>
+                
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-3.jpg);">
+                </div>
+               
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+                </div>
+                
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
                 </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="box box2">
-                <h2><img src="https://assets.cdn.filesafe.space/sQ0mUfIjnJlWy5hJUOWy/media/63be5ec8-f762-44d0-a4e0-bf1091fd5e66.png" alt="Star" class="star-image"><br>OVER THE MOON</h2>
-                <p class="testimonial-text">"They worked so hard and he’s a nice guy too, thank you so much Harry over the moon with our new drive thanks!"</p>
-                <div class="additional-container">
-                    <h4>{{custom_values.review_name_4}}</h4>
-                    <h2 class="additional">{{custom_values.review_date_4}}</h2>
-                </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="box box3">
-                <h2><img src="https://assets.cdn.filesafe.space/sQ0mUfIjnJlWy5hJUOWy/media/63be5ec8-f762-44d0-a4e0-bf1091fd5e66.png" alt="Star" class="star-image"><br>CANNOT FAULT</h2>
-                <p class="testimonial-text">"Can't fault the service or standard of workmanship"</p>
-                <div class="additional-container">
-
-                    <h4>{{custom_values.review_name_5}}</h4>
-                    <h2 class="additional">{{custom_values.review_date_5}}</h2>
-                </div>
-            </div>
-          </div> 
-          
+            <div class="swiper-pagination"></div>
+           
+            <div class="swiper-button-next swiper-button-next--modal"></div>
+            <div class="swiper-button-prev swiper-button-prev--modal"></div>
         </div>
 
-        <div class="swiper-scrollbar"></div>
+        <div class="swiper swiper-container gallery-thumbs gallery-thumbs--modal">
+            <div class="swiper-wrapper">
+                <!-- thumbs Image 1 -->
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg);">
+                </div>
+                <!-- thumbs Image 2 -->
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-2.jpg);">
+                </div>
+                <!-- thumbs Image 3 -->
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-3.jpg);">
+                </div>
+                <!-- thumbs Image 4 -->
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+                </div>
+                <!-- thumbs Image 5 -->
+                <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-5.jpg);">
+                </div>
+            </div>
+        </div>
     </div>
+    
 
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+</div> 
+
+
+<div class="main">
+    <div class="swiper-container gallery-top gallery-top--desktop">
+        <div class="swiper-wrapper">
+            <!-- Image 1 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg);">
+            </div>
+            <!-- Image 2 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-2.jpg);">
+            </div>
+            <!-- Image 3 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-3.jpg);">
+            </div>
+            <!-- Image 4 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+            </div>
+            <!-- Image 5 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+            </div>
+        </div>
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white swiper-button-next--desktop"></div>
+    <div class="swiper-button-prev swiper-button-white swiper-button-prev--desktop"></div>
+    </div>
+    
+    <div class="swiper-container gallery-thumbs gallery-thumbs--desktop">
+        <div class="swiper-wrapper">
+            <!-- thumbs Image 1 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-1.jpg);">
+            </div>
+            <!-- thumbs Image 2 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-2.jpg);">
+            </div>
+            <!-- thumbs Image 3 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-3.jpg);">
+            </div>
+            <!-- thumbs Image 4 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-4.jpg);">
+            </div>
+            <!-- thumbs Image 5 -->
+            <div class="swiper-slide" style="background-image:url(https://swiperjs.com/demos/images/nature-5.jpg);">
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper for головний слайдер -->
     <script>
-        const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: false,
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: false, 
-      },
-
-      touchReleaseOnEdges: true, 
-      threshold: 0, 
-
-      breakpoints: {
-        320: {
-            slidesPerView: 1.25, 
-        spaceBetween: 20,
-        },
-        480: {
-        slidesPerView: 1.4,
-        },
-        520: {
-        slidesPerView: 1.5,
-        },
-        600: {
-        slidesPerView: 1.7,
-        }, 
-        900: {
-        slidesPerView: 3,
-        },
-  }
-    });
-
-    
+        const galleryThumbsDesk = new Swiper('.gallery-thumbs--desktop', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+                    freeMode: {
+            enabled: true,
+            sticky: true,
+            },
+        });
+        const galleryTopDesk = new Swiper('.gallery-top--desktop', {
+            spaceBetween: 10,
+                pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+            formatFractionCurrent: function (number) {
+                return ' ' + number;
+            }
+            },
+                freeMode: {
+            enabled: true,
+            sticky: true,
+            },
+            navigation: {
+            nextEl: '.swiper-button-next--desktop',
+            prevEl: '.swiper-button-prev--desktop',
+            },
+            thumbs: {
+            swiper: galleryThumbsDesk
+            }
+        });
     </script>
-    
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+
+        const galleryThumbsDesk = new Swiper('.gallery-thumbs--desktop', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            freeMode: {
+                enabled: true,
+                sticky: true,
+            },
+        });
+
+        const galleryTopDesk = new Swiper('.gallery-top--desktop', {
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+                formatFractionCurrent: function (number) {
+                    return ' ' + number;
+                },
+            },
+            freeMode: {
+                enabled: true,
+                sticky: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next--desktop',
+                prevEl: '.swiper-button-prev--desktop',
+            },
+            thumbs: {
+                swiper: galleryThumbsDesk,
+            },
+        });
+
+        document.querySelectorAll('.gallery-top--desktop .swiper-slide').forEach(function (image, index) {
+            image.addEventListener('click', function () {
+                body.classList.add('modal-open');
+                document.getElementById('modal').style.display = 'block';
+                document.getElementById('modal-overlay').style.display = 'block';
+
+                // Initialize modal Swiper after modal is displayed
+                const galleryThumbsDeskModal = new Swiper('.gallery-thumbs--modal', {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    freeMode: true,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
+                    freeMode: {
+                        enabled: true,
+                        sticky: true,
+                    },
+                });
+
+                const galleryTopModal = new Swiper('.gallery-top--modal', {
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'fraction',
+                        formatFractionCurrent: function (number) {
+                            return ' ' + number;
+                        },
+                    },
+                    freeMode: {
+                        enabled: true,
+                        sticky: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next--modal',
+                        prevEl: '.swiper-button-prev--modal',
+                    },
+                    thumbs: {
+                        swiper: galleryThumbsDeskModal,
+                    },
+                });
+
+                galleryTopModal.slideTo(index);
+            });
+        });
+
+        document.getElementById('modal-overlay').addEventListener('click', function () {
+            body.classList.remove('modal-open');
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('modal-overlay').style.display = 'none';
+        });
+
+        document.getElementById('modal').addEventListener('click', function (event) {
+            if (event.target === document.getElementById('modal')) {
+                body.classList.remove('modal-open');
+                document.getElementById('modal').style.display = 'none';
+                document.getElementById('modal-overlay').style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+
+
+
 
 
 
